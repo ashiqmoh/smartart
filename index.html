@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="description" content="A project based on Powerpoint SmartArt. This program can auto-adjust spacing, font size and columns needed based on user text input.">
+		<meta name="keyword" content="ashiqmoh.hfu,ashiq,mohamed,ashiqmoh,homepage,studienarbeit,smart,art,smart art">
+		<meta name="author" content="Ashiq Mohamed">
+		<meta name="copyright" content="ashiqmoh">
+		<meta name="language" content="English">
+		<meta name="date" content="20:22 10/16/2012">
+		<meta name="robots" content="index, follow">
+		<meta name="revisit-after" content="3 days">
+		<link rel="shorcut icon" type="image/x-icon" href="img/favicon.ico"/>
+		<link rel="stylesheet" href="css/cascade.css"/>
+		<link rel="stylesheet" href="css/jqueryui.css"/>
+		<link rel="stylesheet" href="css/scroll.css"/>
+		<script src="scripts/jquery-1.8.2.min.js"></script>
+		<script src="scripts/jqueryUI.js"></script>
+		<script src="scripts/tinyscrollbar.js"></script>
+		<script src="scripts/functions.js"></script>
+		<script src="scripts/clear.js"></script>
+		<script src="scripts/enableTab.js"></script>
+		<script src="scripts/setFamily.js"></script>
+		<script src="scripts/setUML.js"></script>
+		<script src="scripts/canvas12.js"></script>
+		<script src="scripts/canvas22.js"></script>
+		<script src="scripts/canvas3.js"></script>
+		<script src="scripts/canvas4.js"></script>
+		<script src="scripts/wrap1.js"></script>
+		<script src="scripts/wrap2.js"></script>
+		<script src="scripts/wrap3.js"></script>
+		<title>Smart Art</title>
+	</head>
+
+	<body>
+		<div id="header">
+			<h1 id="smart">Smart Art</h1>
+			<a href="http://www.hs-furtwangen.de" target="_blank"><img id="logo" src="img/logo.jpg" title="Hochschule Furtwangen University"/></a>
+		</div>
+		<div id="content">
+			<div id="panel">
+				<div id="tabs">
+					<ul>
+						<li id="console"><a href="#tab1" style="outline:0;border:0"><span class="ui-icon ui-icon-comment"></span></a></li>
+						<li id="Templates"><a href="#tab2" style="outline:0;border:0;"><span class="ui-icon ui-icon-image"></span></a></li>
+					</ul>
+					<div id="tab1">
+						<textarea id="input" wrap="off" onkeydown="return catchTab(this,event)" autofocus="autofocus"></textarea>
+					</div>
+					<div id="tab2">
+						<div class="scrollbar">
+							<div class="track">
+								<div class="thumb">
+									<div class="end">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="viewport">
+							<div class="overview">
+								<form id="chooseTemp">
+									<input type="radio" name="template" value="template1" id="temp1"/>
+									<label id="labels" for="temp1"><img id="template" src="img/01.png" title="Columns"/></label>
+									<input type="radio" name="template" value="template2" id="temp2"/>
+									<label id="labels" for="temp2"><img id="template" src="img/02.png" title="Timeline"/></label>
+									<input type="radio" name="template" value="template3" id="temp3"/>
+									<label id="labels" for="temp3"><img id="template" src="img/03.png" title="Arrows"/></label>
+									<input type="radio" name="template" value="template4" id="temp4"/>
+									<label id="labels" for="temp4"><img id="template" src="img/04.png" title="UML"/></label>
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				<button id="clear" type="button">Clear</button>
+				<button id="ok" type="button">Ok</button>
+			</div>
+			<div id="canvas">
+				<div id="outputDiv">
+					<img id="outputImg" width="870" height="580"/>
+				</div>
+			</div>
+		</div>
+		<div id="footer">
+			<p id="test"></p>
+		</div>
+		<div id="dialog-error" style="display:none;">
+			<p><span class="ui-icon ui-icon-alert" style="float:left;margin:0 7px 20px 0;"></span>There is no written inputs found on the console.</p>
+		</div>
+		<div id="dialog-confirm" style="display:none;">
+			<p><span class="ui-icon ui-icon-alert" style="float:left;margin:0 7px 20px 0;"></span>These will clear the inputs on the console permanently. Are you sure?</p>
+		</div>
+		<div id="helpmessage" style="display:none;">
+			<p>Create a new point by using '-' key. Use 'tab' button to add a new subpoint.<br/>
+			eg:<br/>
+			-point1<br/>
+			<span style="padding-left:20px;">-subpoint1</span><br/>
+			<span style="padding-left:20px;">-subpoint2</span><br/>
+			-point2<br/>
+			<span style="padding-left:20px;">-subpoint1</span><br/>
+			<span style="padding-left:20px;">-subpoint2</span></p>
+		</div>
+		<div id="dialog-sorry" style="display:none;">
+			<p>This slide can take maximum of six main points. Sorry about that. :(</p>
+		</div>
+	</body>
+</html>
